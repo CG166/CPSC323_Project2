@@ -1,13 +1,9 @@
-/**  ∘₊✧────────────────────────────────────────────────✧₊∘ *
- *      project2.cpp
- *     
- *      
- *   ∘₊✧────────────────────────────────────────────────✧₊∘ */
+#ifndef PROJECT2_HPP
+#define PROJECT2_HPP
 
-     /* ✧ ✦ ✧───────────────✧ ✦ ✧ *
+    /* ✧ ✦ ✧───────────────✧ ✦ ✧ *
     *          Include          *
     * ✧ ✦ ✧───────────────✧ ✦ ✧ */
-    #include "project2.hpp"
         
     #include <iostream>
     #include <fstream>
@@ -52,33 +48,13 @@ class Program {
          *          Constructors          *
          * ✧ ✦ ✧────────────────────✧ ✦ ✧ */
 
-         Program () 
-         {
-            this->alphabet_ = new vector<char*> ();
-                this->alphabet_->push_back(new char ("i"));
-                this->alphabet_->push_back(new char ("+"));
-                this->alphabet_->push_back(new char ("-"));
-                this->alphabet_->push_back(new char ("*"));
-                this->alphabet_->push_back(new char ("/"));
-                this->alphabet_->push_back(new char ("("));
-                this->alphabet_->push_back(new char (")"));
-
-            this->end_symbol_ = new char ("$");
-         }
+         Program ();
 
      /* ✧ ✦ ✧──────────────────✧ ✦ ✧ *
       *          Destructor          *
       * ✧ ✦ ✧──────────────────✧ ✦ ✧ */
 
-         ~Program()
-         {
-            for (auto pointer : *this->alphabet_)
-            {
-                delete pointer;
-            }
-
-            delete this->end_symbol_;
-         }
+         ~Program();
 
      /* ✧ ✦ ✧───────────────✧ ✦ ✧ *
       *          Methods          *
@@ -92,3 +68,5 @@ class Program {
       * ✧ ✦ ✧───────────────────────✧ ✦ ✧ */
 
 }
+
+#endif

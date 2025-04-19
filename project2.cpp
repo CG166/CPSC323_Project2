@@ -20,6 +20,7 @@
     using std::endl;
     using std::vector;
     using std::string;
+    using std::reverse;
 
 class Program {
 
@@ -28,8 +29,8 @@ class Program {
          *          Private Variables          *
          * ✧ ✦ ✧─────────────────────────✧ ✦ ✧ */
 
-         vector<char*>* alphabet_;
-         char* end_symbol_;
+         vector<string*>* alphabet_;
+         string* end_symbol_;
 
          // Variables for debugging :)
          bool debug = false;
@@ -54,16 +55,18 @@ class Program {
 
          Program () 
          {
-            this->alphabet_ = new vector<char*> ();
-                this->alphabet_->push_back(new char ("i"));
-                this->alphabet_->push_back(new char ("+"));
-                this->alphabet_->push_back(new char ("-"));
-                this->alphabet_->push_back(new char ("*"));
-                this->alphabet_->push_back(new char ("/"));
-                this->alphabet_->push_back(new char ("("));
-                this->alphabet_->push_back(new char (")"));
+            // Defining the alphabet provided in instructions
+            this->alphabet_ = new vector<string*> ();
+                this->alphabet_->push_back(new string ("i"));
+                this->alphabet_->push_back(new string ("+"));
+                this->alphabet_->push_back(new string ("-"));
+                this->alphabet_->push_back(new string ("*"));
+                this->alphabet_->push_back(new string ("/"));
+                this->alphabet_->push_back(new string ("("));
+                this->alphabet_->push_back(new string (")"));
 
-            this->end_symbol_ = new char ("$");
+            this->end_symbol_ = new string ("$");
+
          }
 
      /* ✧ ✦ ✧──────────────────✧ ✦ ✧ *
@@ -84,6 +87,18 @@ class Program {
       *          Methods          *
       * ✧ ✦ ✧───────────────✧ ✦ ✧ */
 
+      string traceString (const string inputString) {
+
+        auto inputStringIterator = inputString.rbegin();
+
+        while (inputStringIterator != inputString.rend())
+        {
+            //insert code to do the thing
+
+            inputStringIterator++;
+        }
+
+      }
 
  private:
 

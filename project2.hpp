@@ -24,8 +24,10 @@ class Program {
          *          Private Variables          *
          * ✧ ✦ ✧─────────────────────────✧ ✦ ✧ */
 
-         vector<char*>* alphabet_;
-         char* end_symbol_;
+         // Alphabet provided in instructions
+         vector<string*>* alphabet_;
+         // "$"
+         string* end_symbol_;
 
          // Variables for debugging :)
          bool debug = false;
@@ -48,7 +50,7 @@ class Program {
          *          Constructors          *
          * ✧ ✦ ✧────────────────────✧ ✦ ✧ */
 
-         Program ();
+         Program();
 
      /* ✧ ✦ ✧──────────────────✧ ✦ ✧ *
       *          Destructor          *
@@ -60,6 +62,7 @@ class Program {
       *          Methods          *
       * ✧ ✦ ✧───────────────✧ ✦ ✧ */
 
+      string traceString (const string inputString);
 
  private:
 

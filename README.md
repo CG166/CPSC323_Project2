@@ -26,17 +26,18 @@
 # Code Explanation and Design Choices
 
 ## Gloabl Variables
-**Stack**
-This is the stack that we will be using to parse the input string, it is a stack of strings
-```C++ stack<string> Stack;```  
+**Stack**  
+This is the stack that we will be using to parse the input string, it is a stack of strings  
+```stack<string> Stack;```  
+
 **ppTable**  
-```C++ string ppTable[5][8] = {```  
-```C++{"T E'", "", "", "", "", "T E'", "", ""},```  
-```C++{"", "T + E'", "T - E'", "", "", "", "&", "&"},```  
-```C++{"F T'", "", "", "", "", "F T'", "", ""},```  
-```C++{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
-```C++{"a", "", "", "", "", "( E )", "", ""},```  
-```C++};```
+```string ppTable[5][8] = {```  
+```{"T E'", "", "", "", "", "T E'", "", ""},```  
+```{"", "T + E'", "T - E'", "", "", "", "&", "&"},```  
+```{"F T'", "", "", "", "", "F T'", "", ""},```  
+```{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
+```{"a", "", "", "", "", "( E )", "", ""},```  
+```};```
 
 ## Functions
 ### Basic Functions

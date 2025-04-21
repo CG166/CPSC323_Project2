@@ -104,9 +104,74 @@ bool isTerminal(string top) {
     return false;
 }
 ```
+**void printStack**  
+```cpp
+void printStack() {
+    vector<string> arrayStack;
+    stack<string> stackCopy(Stack);
+    while (!stackCopy.empty()) {
+        arrayStack.push_back(stackCopy.top());
+        stackCopy.pop();
+    }
+
+    cout << "[";
+    for (int i = arrayStack.size() - 1; i >= 0; --i) {
+        cout << arrayStack[i];
+        if (i != 0) cout << ", ";
+    }
+    cout << "]\n";
+}
+```
 
 
 ### Parse Function
+**void parse(char input, string top)**  
+```cpp
+void parse(char input, string top) {
+    // Variables
+    string fetched; // Whatever is retrieved from parsing table
+    string symbol;
+    int row = rowNum(top);
+    int column = colunmNum(input);
+    vector<string> arrayStack;
+
+    // Pop the top of the stack
+    Stack.pop();
+
+    // Fetch result from parsing table
+    fetched = ppTable[row][column];
+    if (fetched.empty()) {
+        cout << "Rule not found!\n";
+        cout << "Output: String is not accepted/ Invalid.\n";
+        exit(1);
+    } else if(fetched == "&") {
+        cout << "From table: epsilon\n";
+        cout << "Stack popped!\n";
+        // Print new stack
+        cout << "New Stack: ";
+        printStack();
+        return;
+    } else { 
+        istringstream stream(fetched);
+        cout << "From table: " << fetched << "\n";
+
+        // Push new symbols to array
+        while (stream >> symbol) {
+            arrayStack.push_back(symbol);
+        }
+
+        // Push symbols of array into stack in reverse order
+        for (int i = arrayStack.size() - 1; i >= 0; --i) {
+            Stack.push(arrayStack[i]);
+        }
+        
+        // Print new stack
+        cout << "New Stack: ";
+        printStack();
+    }
+}
+```
+
 
 ## Main
 

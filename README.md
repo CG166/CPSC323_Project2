@@ -14,6 +14,7 @@
 
 **4. Enter the Input string**
    - The program should prompt the user to input the string that will be parsed.
+   - Type in the string that you wish to be parsed with no additional spaces before or after the string, then press enter.
 
 # Contributors
 * Cindy Garcia

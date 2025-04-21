@@ -28,14 +28,14 @@
 ## Gloabl Variables
 **Stack**
 This is the stack that we will be using to parse the input string, it is a stack of strings
-```C++ stack<string> Stack;```
-**ppTable**
-```C++ string ppTable[5][8] = {```
-```C++{"T E'", "", "", "", "", "T E'", "", ""},```
-```C++{"", "T + E'", "T - E'", "", "", "", "&", "&"},``
-```C++{"F T'", "", "", "", "", "F T'", "", ""},```
-```C++{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```
-```C++{"a", "", "", "", "", "( E )", "", ""},```
+```C++ stack<string> Stack;```  
+**ppTable**  
+```C++ string ppTable[5][8] = {```  
+```C++{"T E'", "", "", "", "", "T E'", "", ""},```  
+```C++{"", "T + E'", "T - E'", "", "", "", "&", "&"},```  
+```C++{"F T'", "", "", "", "", "F T'", "", ""},```  
+```C++{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
+```C++{"a", "", "", "", "", "( E )", "", ""},```  
 ```C++};```
 
 ## Functions

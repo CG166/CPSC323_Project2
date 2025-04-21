@@ -12,6 +12,9 @@
 **3. Run the Out file that has been created**
    - Run the Out file using the command *./out*
 
+**4. Enter the Input string**
+   - The program should prompt the user to input the string that will be parsed.
+
 # Contributors
 * Cindy Garcia
 * Tiffany Vy Buu

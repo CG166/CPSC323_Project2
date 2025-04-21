@@ -204,7 +204,47 @@ int main(void) {
     cout << "\n";
 }
 ```
-In our main function, the user is prompted to enter the input string they want to be parsed and that string is saved in the *userInput* variable. The empty global stack *Stack* gets the starting symbols $ and E pushed into it. The curent top of the stack and the current input symbol (the first character of the input string userInput) are extracted and put into the *top* and *input* variables respectfully. The current stack is printed out using **printStack()**.
+In our main function, the user is prompted to enter the input string they want to be parsed and that string is saved in the *userInput* variable. The empty global stack *Stack* gets the starting symbols $ and E pushed into it. The curent top of the stack and the current input symbol (the first character of the input string userInput) are extracted and put into the *top* and *input* variables respectfully. The current stack is printed out using **printStack()**.  
+```cpp
+// Parsing until both input and top are $
+while(input != '$' && top != "$") {
+    input = userInput[0];
+    top = Stack.top();
+
+    // Printing out top of stack and current input symbol
+    cout << "Top of Stack: " << top << ", ";
+    cout << "Current Input: " << input << "\n";
+
+    if(isTerminal(top) == true) { // Check if stack top is a terminal
+        if(string(1,input) == top) { // Check if stack top and current input match
+            // Pop Stack
+            Stack.pop();
+            // Move input forward
+            userInput.erase(0,1);
+            // Print out
+            cout << "Top of Stack and Current Input Symbol match!\n";
+            cout << "Current input symbol moved forward.\n";
+            // Print new stack
+            cout << "Stack popped!\n";
+            cout << "New Stack: ";
+            printStack();
+
+        } else { // If stack top and current input don't match, reject the string
+            cout << "Output: String is not accepted/ Invalid.\n"; // Print out rejection message
+            exit(1);
+        }
+    } else { // If stack top is a non-terminal
+        parse(input, top);
+    }
+    // Space
+    cout << "\n";
+}
+cout << "Output: String is accepted/ valid.\n";
+
+return 0;
+}
+```
+
 
 # Dependencies and Version Used
 

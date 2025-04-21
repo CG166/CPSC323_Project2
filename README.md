@@ -244,7 +244,7 @@ cout << "Output: String is accepted/ valid.\n";
 return 0;
 }
 ```
-
+A while loop is established that will continue looping until both the *input* variable (the current input symbol) and the *top* variable (the symbol on top of the stack) are both $, in which case the loop will end, the "Output: String is accepted/ valid." will be printed, and the program will end. Within the while loop, *top* and *input* will be set to the current top of the Stack, and current input symbol respectivly, and printed out. Then *top* will be checked to see if it a terminal or not with **isTerminal(string top)**. If *top* is a terminal, then the program will check if *top* and *input* match, if they do then the Stack will be popped, the current input symbol will be moved forward (by having the fisrt character of *userInput* erased), the messages "Top of Stack and Current Input Symbol match!" and "Current input symbol moved forward." will printed, and the current stack will be printed with **printStack**. If the *top* is a terminal, *top* and *input* do not match, then the message "Output: String is not accepted/ Invalid." is printed and the entire program is terminated. If **isTerminal(string top)** returns false, meaning that *top* is a non-terminal, then *input* and *top* are given to **parse(char input, string top)** which modifies the stack or ends the program according to the predictative parsing table.
 
 # Dependencies and Version Used
 

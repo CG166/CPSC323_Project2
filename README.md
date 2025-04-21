@@ -42,6 +42,8 @@ This 2d array of strings functions as the predictive parsing table in our progra
 
 ## Functions
 ### Basic Functions
+**int rowNum**  
+<pre> ```cpp int rowNum(string top) { int row; if(top == "E"){ row = 0; }else if(top == "E'") { row = 1; }else if(top == "T") { row = 2; }else if(top == "T'") { row = 3; }else if(top == "F") { row = 4; } return row; } ``` </pre>
 
 ### Parse Function
 

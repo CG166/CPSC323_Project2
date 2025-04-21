@@ -16,18 +16,6 @@
    - The program should prompt the user to input the string that will be parsed.
    - Type in the string that you wish to be parsed with no additional spaces before or after the string, then press enter.
    - The program should run and parse through the string, as well as output the process.
-   - It should look like this -
-     '''Input: a+a$
-Stack: [$, E]
-
-Top of Stack: E, Current Input: a
-From table: T E'
-New Stack: [$, E', T]
-
-Top of Stack: T, Current Input: a
-From table: F T'
-New Stack: [$, E', T', F]
-
 
 
 # Contributors

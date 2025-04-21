@@ -18,12 +18,12 @@
    - The program should run and parse through the string, as well as output the process.
    - It should look like this -
      - cindy@cindy-Latitude-3310-2-in-1:~/Compilers/CPSC323_Project2$ ./out
-      Input: a+a$
-      Stack: [$, E]
+         Input: a+a$
+         Stack: [$, E]
       
-      Top of Stack: E, Current Input: a
-      From table: T E'
-      New Stack: [$, E', T]
+         Top of Stack: E, Current Input: a
+         From table: T E'
+         New Stack: [$, E', T]
       
       Top of Stack: T, Current Input: a
       From table: F T'

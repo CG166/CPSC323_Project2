@@ -25,7 +25,7 @@
 
 # Code Explanation and Design Choices
 
-## Gloabl Variables
+## Global Variables
 **Stack**
 This is the stack that we will be using to parse the input string, it is a stack of strings
 ```C++ stack<string> Stack;```
@@ -35,9 +35,24 @@ This is the stack that we will be using to parse the input string, it is a stack
 ## Functions
 ### Basic Functions
 
+* `int rowNum(string top) {}`
+   - Returns the input string's correlating row number from the parsing table
+
+* `int colunmNum(char input) {}`
+   - Returns the input characters's correlating column number from the parsing table
+
+* `bool isTerminal(string top) {}`
+   - Returns if the input string is one of the character's in our alphabet
+   - Our Alphabet = `i, +, - , *, / , ), (, $`
+
+* `void printStack() {}`
+   - Prints elements inside the current stack
+
 ### Parse Function
+Takes the current input character and parses it
 
 ## Main
+Initializes program and prompts user for input
 
 # Dependencies and Version Used
 

@@ -25,7 +25,7 @@
 
 # Code Explanation and Design Choices
 
-## Gloabl Variables
+## Global Variables
 **Stack**   
 ```stack<string> Stack;```  
 This is the stack that we will be using to parse the input string, it is a stack of strings.

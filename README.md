@@ -177,7 +177,7 @@ void parse(char input, string top) {
     }
 }
 ```
-
+This function is to be used in the situation that the symbol at the top of the stack is a non-terminal. This function takes in the symbol that is at the current input symbol and the symbol that is at the top of the Stack as parameters. It uses 
 
 ## Main
 

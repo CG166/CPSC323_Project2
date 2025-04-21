@@ -37,7 +37,7 @@ This is the stack that we will be using to parse the input string, it is a stack
 ```{"F T'", "", "", "", "", "F T'", "", ""},```  
 ```{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
 ```{"a", "", "", "", "", "( E )", "", ""},```  
-```};```
+```};```  
 This 2d array of strings functions as the predictive parsing table in our program.
 
 ## Functions

@@ -26,7 +26,7 @@
 # Code Explanation and Design Choices
 
 ## Gloabl Variables
-'''C++
+```C++
 stack<string> Stack;
 
 ## Functions

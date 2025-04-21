@@ -64,6 +64,7 @@ int rowNum(string top) {
     return row;
 }
 ```
+This function takes in the symbol that is at the top of the Stack as a paramenter, uses a for loop in order to map the symbol to it's corresponding row number, and then returns that row number as an integer.
 **in columnNum**
 ```cpp
 int colunmNum(char input) {

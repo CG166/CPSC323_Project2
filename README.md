@@ -26,9 +26,9 @@
 # Code Explanation and Design Choices
 
 ## Gloabl Variables
-**Stack**  
-This is the stack that we will be using to parse the input string, it is a stack of strings  
+**Stack**   
 ```stack<string> Stack;```  
+This is the stack that we will be using to parse the input string, it is a stack of strings.
 
 **ppTable**  
 ```string ppTable[5][8] = {```  
@@ -38,6 +38,7 @@ This is the stack that we will be using to parse the input string, it is a stack
 ```{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
 ```{"a", "", "", "", "", "( E )", "", ""},```  
 ```};```
+This 2d array of strings functions as the predictive parsing table in our program.
 
 ## Functions
 ### Basic Functions

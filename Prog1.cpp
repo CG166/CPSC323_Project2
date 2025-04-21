@@ -95,6 +95,7 @@ void parse(char input, string top) {
     string symbol;
     int row = rowNum(top);
     int column = colunmNum(input);
+    vector<string> arrayStack;
 
     //Pop the top of the stack
     Stack.pop();
@@ -103,19 +104,27 @@ void parse(char input, string top) {
     fetched = ppTable[row][column];
     if (fetched.empty()) {
         cout << "Rule not found!\n";
-        cout << "Output: String is not accepted/ Invalid./n";
+        cout << "Output: String is not accepted/ Invalid.\n";
         exit(1);
     } else if(fetched == "&") {
         cout << "From table: epsilon\n";
         cout << "Stack popped!\n";
+         //Print new stack
+        cout << "New Stack: ";
+        printStack();
         return;
     }else { 
         istringstream stream(fetched);
         cout << "From table: " << fetched << "\n";
     
-        //Push new symbols to stack
+        //Push new symbols to array
         while (stream >> symbol) {
-            Stack.push(symbol);
+            arrayStack.push_back(symbol);
+        }
+
+        //Push symbols of array into stack in reverse order
+        for (int i = arrayStack.size() - 1; i >= 0; --i) {
+            Stack.push(arrayStack[i]);
         }
         
         //Print new stack
@@ -164,8 +173,12 @@ int main(void) {
                 //Move input forward
                 userInput.erase(0,1);
                 //Print out
-                cout << "Stack popped!\n";
+                cout << "Top of Stack and Current Input Symbol match!\n";
                 cout << "Current input symbol moved forward.\n";
+                //Print new stack
+                cout << "Stack popped!\n";
+                cout << "New Stack: ";
+                printStack();
 
             } else { //If stack top and current input don't match, reject the string
                 cout << "Output: String is not accepted/ In valid.\n"; //Print out rejection message

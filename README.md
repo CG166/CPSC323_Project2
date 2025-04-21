@@ -44,4 +44,4 @@
 - **Pushing and printing the stack in the correct order:** There was a bit of trouble when we were figuring out how to push the values fetchched from the parsing table into the stack in the correct order. We ending up having the push the values fetched from the parsing table into a vector, and then iterate through the vector in reverse order and push the values into the stack that way. We also ended up using the same technique to print out the contents of the stack in the correct order.
 
 ## Bugs
-
+- **Nothing getting pushed to Stack:** There was a bug in our parse function where the values fetched from the parsing table were not getting pushed into the stack. The reason ended up being becasue we had initalized the istringstream we were using the read the values into the stack to the fetched string variable while the fetch variable was still empty. We fixed the bug by not intializing the istringstream until after the fetched variable contains the values fetched from the parsing table.

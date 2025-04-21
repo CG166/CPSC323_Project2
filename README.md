@@ -17,21 +17,17 @@
    - Type in the string that you wish to be parsed with no additional spaces before or after the string, then press enter.
    - The program should run and parse through the string, as well as output the process.
    - It should look like this -
-     - cindy@cindy-Latitude-3310-2-in-1:~/Compilers/CPSC323_Project2$ ./out
-         Input: a+a$
-         Stack: [$, E]
-      
-         Top of Stack: E, Current Input: a
-         From table: T E'
-         New Stack: [$, E', T]
-      
-      Top of Stack: T, Current Input: a
-      From table: F T'
-      New Stack: [$, E', T', F]
-      
-      Top of Stack: F, Current Input: a
-      From table: a
-      New Stack: [$, E', T', a]
+     '''Input: a+a$
+Stack: [$, E]
+
+Top of Stack: E, Current Input: a
+From table: T E'
+New Stack: [$, E', T]
+
+Top of Stack: T, Current Input: a
+From table: F T'
+New Stack: [$, E', T', F]
+
 
 
 # Contributors

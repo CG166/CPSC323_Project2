@@ -25,6 +25,15 @@
 
 # Code Explanation and Design Choices
 
+## Gloabl Variables
+
+## Functions
+### Basic Functions
+
+### Parse Function
+
+## Main
+
 # Dependencies and Version Used
 
 ### Dependencies

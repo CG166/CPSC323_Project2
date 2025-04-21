@@ -3,6 +3,7 @@
 #include <stack>
 #include <string>
 #include <sstream>
+#include <vector>
 
 
 using namespace std;
@@ -73,11 +74,19 @@ bool isTerminal(string top) {
 }
 
 void printStack() {
+    vector<string> arrayStack;
     stack<string> stackCopy(Stack);
     while (!stackCopy.empty()) {
-        cout << stackCopy.top() << "\n";
+        arrayStack.push_back(stackCopy.top());
         stackCopy.pop();
     }
+
+    cout << "[";
+    for (int i = arrayStack.size() - 1; i >= 0; --i) {
+        cout << arrayStack[i];
+        if (i != 0) cout << ", ";
+    }
+    cout << "]\n";
 }
 
 void parse(char input, string top) {
@@ -90,15 +99,15 @@ void parse(char input, string top) {
     //Pop the top of the stack
     Stack.pop();
 
-    //Debug
-    cout << "Row: " << row << "\n";
-    cout << "Colunm: " << column << "\n";
-
     //Fetch result from parsing table
     fetched = ppTable[row][column];
     if (fetched.empty()) {
-        cout << "Output: String is not accepted/ In valid.";
+        cout << "Rule not found!\n";
+        cout << "Output: String is not accepted/ Invalid./n";
+        exit(1);
     } else if(fetched == "&") {
+        cout << "From table: epsilon\n";
+        cout << "Stack popped!\n";
         return;
     }else { 
         istringstream stream(fetched);
@@ -128,10 +137,15 @@ int main(void) {
 
     //Setting initial stack
     Stack.push("$");
-    Stack.push("T");
+    Stack.push("E");
 
     input = userInput[0];
     top = Stack.top();
+
+    //print out starting stack
+    cout << "Stack: ";
+    printStack();
+    cout << "\n";
 
 
     //Parsing until $
@@ -140,8 +154,8 @@ int main(void) {
         top = Stack.top();
 
         //Printing out top of stack and current input symbol
-        cout << "Stack: " << top << "\n";
-        cout << "Input: " << input << "\n";
+        cout << "Top of Stack: " << top << ", ";
+        cout << "Current Input: " << input << "\n";
 
         if(isTerminal(top) == true){ //Check if stack top is a terminal
             if(string(1,input) == top) { //Check if stack top and current input match
@@ -149,19 +163,21 @@ int main(void) {
                 Stack.pop();
                 //Move input forward
                 userInput.erase(0,1);
+                //Print out
+                cout << "Stack popped!\n";
+                cout << "Current input symbol moved forward.\n";
+
             } else { //If stack top and current input don't match, reject the string
-                cout << "Output: String is not accepted/ In valid."; //Print out rejection message
-                break; //Break out of while loop
+                cout << "Output: String is not accepted/ In valid.\n"; //Print out rejection message
+                exit(1);
             }
         } else { //If stack top is a non-terminal
             parse(input, top);
         }
-
+        //Space
         cout << "\n";
-
-
     }
+    cout << "Output: String is accepted/ valid.\n";
     
-
     return 0;
 }

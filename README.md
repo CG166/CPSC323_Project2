@@ -29,3 +29,7 @@
 
 # Reflections
 
+## Challenges
+
+## Bugs
+

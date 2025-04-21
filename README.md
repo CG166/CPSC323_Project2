@@ -66,7 +66,7 @@ int rowNum(string top) {
 ```
 This function takes in the symbol that is at the top of the Stack as a paramenter, uses a for loop in order to map the symbol to it's corresponding row number in the predictive parsing table, and then returns that row number as an integer.  
 
-**in columnNum(char input)**
+**int columnNum(char input)**
 ```cpp
 int colunmNum(char input) {
     int column;
@@ -128,7 +128,7 @@ void printStack() {
     cout << "]\n";
 }
 ```
-
+This function prints out the contents of the global stack in the format ["E","E","E"]. It does this by creating a copy stack of the global stack and a vector of strings, iteratively pushing the top of the copy stack into the vector and popping the stack until the stack is empty, then iterating through the vector in reverse and printing the contents as we go in order to print out the stack contents in the correct order.  
 
 ### Parse Function
 **void parse(char input, string top)**  

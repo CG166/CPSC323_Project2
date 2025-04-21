@@ -27,6 +27,17 @@
 
 # Dependencies and Version Used
 
+### Dependencies
+
+- **C++ Standard Library**: No external libraries required, uses standard libraries (`<iostream>`, `<string>`, `<stack>`, `<sstream>`, `<vector>`).
+
+### Version Used
+
+- **C++ Standard**: C++17 (default for GCC 13.3.0)
+- **Compiler**: GCC (GNU Compiler Collection)
+    - Version: `13.3.0` (Ubuntu 13.3.0-6ubuntu2~24.04)
+- **Build System**: Command line `g++` used for compilation.
+
 # Reflections
 
 ## Challenges

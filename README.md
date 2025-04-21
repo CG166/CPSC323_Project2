@@ -179,7 +179,32 @@ void parse(char input, string top) {
 ```
 This function is to be used in the situation that the symbol at the top of the stack is a non-terminal. This function takes in the symbol that is at the current input symbol and the symbol that is at the top of the Stack as parameters. It uses **rowNum(string top)** and **colunmNum(char input)** to fectch the corresponding rule(aka string) from the predictive parsing table(2d array) and put it into the fetched variable. If the fetched variable is empty, meaning that there is no rule, then the function prints out that the rule was not found as well as "Output: String is not accepted/ Invalid" and terminates the entire program. If the fetched variable is not empty and contains an epsilon(represted by the & symbol in this program), then the user is alerted that the stack has been popped and the new stack is printed out using **printStack()** after which the function ends/returns. If the fetched variable is not empty and does not contains an epsilon, then the inividual symbols in the rule are extracted from the fetched variable using istringstream and pushed into a vector. The vector is then iterated through in reverse order and the values are pushed into the stack in that order. The new stack is then printed out using **printStack()** after which the function ends/returns.
 
-## Main
+## Main  
+```cpp
+int main(void) {
+    // Variables
+    string userInput;
+    char input;
+    string top;
+
+    // Get User Input
+    cout << "Input: ";
+    getline(cin, userInput);
+
+    // Setting initial stack
+    Stack.push("$");
+    Stack.push("E");
+
+    input = userInput[0];
+    top = Stack.top();
+
+    // Print out starting stack
+    cout << "Stack: ";
+    printStack();
+    cout << "\n";
+}
+```
+In our main function, the user is prompted to enter the input string they want to be parsed and that string is saved in the *userInput* variable. The empty global stack *Stack* gets the starting symbols $ and E pushed into it. The curent top of the stack and the current input symbol (the first character of the input string userInput) are extracted and put into the *top* and *input* variables respectfully. The current stack is printed out using **printStack()**.
 
 # Dependencies and Version Used
 

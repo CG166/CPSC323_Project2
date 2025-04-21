@@ -44,7 +44,7 @@ This 2d array of strings functions as the predictive parsing table in our progra
 
 ## Functions
 ### Basic Functions
-**int rowNum**  
+**int rowNum(string top)**  
 ```cpp
 int rowNum(string top) {
     int row;
@@ -64,8 +64,9 @@ int rowNum(string top) {
     return row;
 }
 ```
-This function takes in the symbol that is at the top of the Stack as a paramenter, uses a for loop in order to map the symbol to it's corresponding row number, and then returns that row number as an integer.
-**in columnNum**
+This function takes in the symbol that is at the top of the Stack as a paramenter, uses a for loop in order to map the symbol to it's corresponding row number in the predictive parsing table, and then returns that row number as an integer.  
+
+**in columnNum(char input)**
 ```cpp
 int colunmNum(char input) {
     int column;
@@ -91,7 +92,9 @@ int colunmNum(char input) {
     return column;
 }
 ```
-**bool isTerminal**
+This function takes in the symbol that is at the current input symbol as a paramenter, uses a for loop in order to map the symbol to it's corresponding colunm number in the predictive parsing table, and then returns that colunm number as an integer.  
+
+**bool isTerminal(string top)**
 ```cpp
 bool isTerminal(string top) {
     string terminals[] = {"a", "+", "-", "*", "/", "(", ")", "$"};

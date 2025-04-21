@@ -31,13 +31,15 @@
 This is the stack that we will be using to parse the input string, it is a stack of strings.
 
 **ppTable**  
-```string ppTable[5][8] = {```  
-```{"T E'", "", "", "", "", "T E'", "", ""},```  
-```{"", "T + E'", "T - E'", "", "", "", "&", "&"},```  
-```{"F T'", "", "", "", "", "F T'", "", ""},```  
-```{"", "&", "&", "F * T'", "F / T'", "", "&", "&"},```  
-```{"a", "", "", "", "", "( E )", "", ""},```  
-```};```  
+```cpp
+string ppTable[5][8] = {
+    {"T E'", "", "", "", "", "T E'", "", ""},
+    {"", "T + E'", "T - E'", "", "", "", "&", "&"},
+    {"F T'", "", "", "", "", "F T'", "", ""},
+    {"", "&", "&", "F * T'", "F / T'", "", "&", "&"},
+    {"a", "", "", "", "", "( E )", "", ""},
+};
+``` 
 This 2d array of strings functions as the predictive parsing table in our program.
 
 ## Functions
@@ -62,6 +64,47 @@ int rowNum(string top) {
     return row;
 }
 ```
+**in columnNum**
+```cpp
+int colunmNum(char input) {
+    int column;
+
+    if(input == 'a'){
+        column = 0;
+    }else if(input == '+') {
+        column = 1;
+    }else if(input == '-') {
+        column = 2;
+    }else if(input == '*') {
+        column = 3;
+    }else if(input == '/') {
+        column = 4;
+    }else if(input == '(') {
+        column = 5;
+    }else if(input == ')') {
+        column = 6;
+    }else if(input == '$') {
+        column = 7;
+    }
+
+    return column;
+}
+```
+**bool isTerminal**
+```cpp
+bool isTerminal(string top) {
+    string terminals[] = {"a", "+", "-", "*", "/", "(", ")", "$"};
+    int ntLength = sizeof(terminals) / sizeof(terminals[0]);
+
+    for(int i = 0; i < ntLength; i++) {
+        if(top == terminals[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
 
 ### Parse Function
 

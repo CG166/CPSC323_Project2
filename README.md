@@ -108,7 +108,9 @@ bool isTerminal(string top) {
     return false;
 }
 ```
-**void printStack**  
+This function takes in the symbol that is at the top of the Stack as a paramenter, uses a for loop to check it against an array containing every terminal symbol, and returns as true if there is a match (because a match confirms that the symbol at the top of the Stack is a terminal).  
+
+**void printStack()**  
 ```cpp
 void printStack() {
     vector<string> arrayStack;

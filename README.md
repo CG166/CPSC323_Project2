@@ -8,9 +8,9 @@
    
 **2. Compile the program Prog1.cpp**
    - Compile the file using the command *g++ Prog1.cpp -o out*
-   - 
+     
 **3. Run the Out file that has been created**
-     - Run the Out file using the command *./out*
+   - Run the Out file using the command *./out*
 
 # Contributors
 * Cindy Garcia

@@ -25,34 +25,90 @@
 
 # Code Explanation and Design Choices
 
-## Global Variables
-**Stack**
-This is the stack that we will be using to parse the input string, it is a stack of strings
-```C++ stack<string> Stack;```
-**ppTable**
-```string ppTable[5][8] = { {"T E'", "", "", "", "", "T E'", "", ""}, {"", "T + E'", "T - E'", "", "", "", "&", "&"}, {"F T'", "", "", "", "", "F T'", "", ""}, {"", "&", "&", "F * T'", "F / T'", "", "&", "&"}, {"a", "", "", "", "", "( E )", "", ""},};```
+## Gloabl Variables
+**Stack**   
+```stack<string> Stack;```  
+This is the stack that we will be using to parse the input string, it is a stack of strings.
+
+**ppTable**  
+```cpp
+string ppTable[5][8] = {
+    {"T E'", "", "", "", "", "T E'", "", ""},
+    {"", "T + E'", "T - E'", "", "", "", "&", "&"},
+    {"F T'", "", "", "", "", "F T'", "", ""},
+    {"", "&", "&", "F * T'", "F / T'", "", "&", "&"},
+    {"a", "", "", "", "", "( E )", "", ""},
+};
+``` 
+This 2d array of strings functions as the predictive parsing table in our program.
 
 ## Functions
 ### Basic Functions
+**int rowNum**  
+```cpp
+int rowNum(string top) {
+    int row;
 
-* `int rowNum(string top) {}`
-   - Returns the input string's correlating row number from the parsing table
+    if(top == "E"){
+        row = 0;
+    }else if(top == "E'") {
+        row = 1;
+    }else if(top == "T") {
+        row = 2;
+    }else if(top == "T'") {
+        row = 3;
+    }else if(top == "F") {
+        row = 4;
+    }
 
-* `int colunmNum(char input) {}`
-   - Returns the input characters's correlating column number from the parsing table
+    return row;
+}
+```
+**in columnNum**
+```cpp
+int colunmNum(char input) {
+    int column;
 
-* `bool isTerminal(string top) {}`
-   - Returns if the input string is one of the character's in our alphabet
-   - Our Alphabet = `i, +, - , *, / , ), (, $`
+    if(input == 'a'){
+        column = 0;
+    }else if(input == '+') {
+        column = 1;
+    }else if(input == '-') {
+        column = 2;
+    }else if(input == '*') {
+        column = 3;
+    }else if(input == '/') {
+        column = 4;
+    }else if(input == '(') {
+        column = 5;
+    }else if(input == ')') {
+        column = 6;
+    }else if(input == '$') {
+        column = 7;
+    }
 
-* `void printStack() {}`
-   - Prints elements inside the current stack
+    return column;
+}
+```
+**bool isTerminal**
+```cpp
+bool isTerminal(string top) {
+    string terminals[] = {"a", "+", "-", "*", "/", "(", ")", "$"};
+    int ntLength = sizeof(terminals) / sizeof(terminals[0]);
+
+    for(int i = 0; i < ntLength; i++) {
+        if(top == terminals[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
 
 ### Parse Function
-Takes the current input character and parses it
 
 ## Main
-Initializes program and prompts user for input
 
 # Dependencies and Version Used
 

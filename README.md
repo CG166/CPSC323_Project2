@@ -27,7 +27,7 @@
 
 ## Gloabl Variables
 ```C++
-stack<string> Stack;
+stack<string> Stack;```
 
 ## Functions
 ### Basic Functions
